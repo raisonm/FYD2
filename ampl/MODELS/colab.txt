@@ -1,0 +1,348 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Jacobs Landscape Poster
+% LaTeX Template
+% Version 1.0 (29/03/13)
+%
+% Created by:
+% Computational Physics and Biophysics Group, Jacobs University
+% https://teamwork.jacobs-university.de:8443/confluence/display/CoPandBiG/LaTeX+Poster
+% 
+% Further modified by:
+% Nathaniel Johnston (nathaniel@njohnston.ca)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[final]{beamer}
+
+\usepackage[scale=1.24]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage{amsrefs}
+
+
+\usepackage{url}
+
+ \renewcommand{\UrlFont}{\small\tt}
+
+
+
+\usetheme{confposter} % Use the confposter theme supplied with this template
+
+\setbeamercolor{block title}{fg=ngreen,bg=white} % Colors of the block titles
+\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
+\setbeamercolor{block alerted title}{fg=white,bg=dblue!70} % Colors of the highlighted block titles
+\setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
+% Many more colors are available for use in beamerthemeconfposter.sty
+
+%-----------------------------------------------------------
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\setlength{\paperwidth}{48in} % A0 width: 46.8in
+\setlength{\paperheight}{36in} % A0 height: 33.1in
+\setlength{\sepwid}{0.024\paperwidth} % Separation width (white space) between columns
+\setlength{\onecolwid}{0.22\paperwidth} % Width of one column
+\setlength{\twocolwid}{0.464\paperwidth} % Width of two columns
+\setlength{\threecolwid}{0.708\paperwidth} % Width of three columns
+\setlength{\topmargin}{-0.5in} % Reduce the top margin size
+%-----------------------------------------------------------
+
+\usepackage{graphicx}  % Required for including images
+
+\usepackage{booktabs} % Top and bottom rules for tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+
+\title{Optimizing Grocery Store Location} % Poster title
+
+\author{Matthew Raison and Julie Pecukonis} % Author(s)
+
+\institute{Wentworth Institute of Technology, Department of Applied Mathematics} % Institution(s)
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+
+\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength\belowdisplayshortskip{2ex} % White space under equations
+
+\begin{frame}[t] % The whole poster is enclosed in one beamer frame
+
+\begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The first column
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVES
+%----------------------------------------------------------------------------------------
+
+\begin{alertblock}{Objectives}
+{\small
+Our goal for this project was to create a model using quantifiable variables in order to locate grocery stores that would be able to benefit the profit of the businesses as well as the convience for the consumers. The steps we took to complete this goal were:  
+\begin{itemize}
+\item Choose and create variables that would be most influential and important for the model
+\item Put choosen variables in mathematical model 
+\item Code model into AMPL using actual raw data 
+\item Use code to find best zip code to locate new store
+\end{itemize}
+}
+\end{alertblock}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Abstract}
+{\small
+\vskip20em
+}
+\end{block}
+\begin{alertblock}{Optimal Location Model}
+{\small
+$$u_{hsbt} = v_{hsbt} + \alpha_{h}\cdot e(b,p_{hst}) + \gamma_{h}(d_{hs}) + X_{hs}\cdot \beta +\xi_{hs}+\epsilon_{hst}$$
+where 
+$u_{hsbt} =$ total utility\\
+$v_{hsbt} =$ utility of bundle over time\\
+$\alpha \cdot e(b,p_{hst}) =$ utility of expenditure or price\\
+$X_{hs}\cdot \beta +\xi_{hs} =$ observed store component and error\\
+$\epsilon_{hst} =$ error given household $h$ and store $s$ \\
+$h =$ household\\
+$s =$ store\\
+$t =$ times\\
+$b =$ bundle\\
+
+%%%%% $u_{isbd} =$ utility for household h buying bundle b over time t at store s \\
+%%%%% $d_{s} =$ exponential sum of each distance from zip code to zip code\\
+%%%%% $n =$ number of zip codes in the city \\
+%%%%% $v_{isbd} = utility of bundle b for household h over time t at store s$\\
+%%%%% $\alpha_{b,p} = $expenditure of bundle b\\
+
+}
+\end{alertblock} 
+%------------------------------------------------
+
+%\begin{figure}
+%\includegraphics[width=0.65\linewidth]{dist1.png}
+%\caption{Super Kewl}
+%\end{figure}
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of the first column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
+
+\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+
+\begin{column}{\onecolwid}\vspace{-.6in} % The first column within column 2 (column 2.1)
+
+%\begin{figure}
+%\includegraphics[width=0.6\linewidth]{dist2.png}
+%\caption{Above we see $\cdots$}
+%\end{figure}
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2.1
+
+\begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
+
+%----------------------------------------------------------------------------------------
+%	METHODS
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Methods}
+{\small
+\begin{eqnarray*}
+&& u_{hsbt} = v_{hsbt} + \alpha_{h}\cdot e(b,p_{hst}) + \gamma_{h}(d_{hs}) + X_{hs}\cdot && \beta +\xi_{hs}+\epsilon_{hst} \\
+&& \mbox{Let $t$ and $b$ be constant} \\
+&& \mbox{Then $v_{hsbt}$ is constant} \\
+\end{eqnarray*}
+\begin{itemize}
+\item 
+\item
+\item \end{itemize}
+}
+\end{block}
+
+%----------------------------------------------------------------------------------------
+
+%\end{column} % End of column 2.2
+
+%\end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
+
+%----------------------------------------------------------------------------------------
+%	IMPORTANT RESULT
+%----------------------------------------------------------------------------------------
+
+
+\end{column} % End of column 2.2
+
+\end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
+%----------------------------------------------------------------------------------------
+
+\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column again
+
+\begin{column}{\onecolwid} % The first column within column 2 (column 2.1)
+
+%----------------------------------------------------------------------------------------
+%	MATHEMATICAL SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Background}
+{\small
+We noticed that where Wentworth is located in Boston, there are not many decent grocery stores around.  To get quality food, we would need to travel quite far, which for us, diminishes the want to go to that store.  It occurred to us that maybe there is a reason that these stores are located where they are, and even for these reasons specifically.  We then had the idea that if we could start over and place the grocery stores exactly where we wanted to, how would we accomplish that? This inspiration and curiosity is what made us interested in doing this project.  We wanted to make a mathematical model that would be able to place specific grocery stores in locations that would be both profitable for the stores and beneficial to the customers.  
+}
+\end{block}
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2.1
+
+\begin{column}{\onecolwid} % The second column within column 2 (column 2.2)
+
+%----------------------------------------------------------------------------------------
+%	RESULTS
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Results}
+
+%\begin{figure}
+%\includegraphics[width=0.8\linewidth]{circle33.png}
+%\caption{Great}
+%\end{figure}
+%{\small
+%\begin{table}[h]
+%\begin{tabular}{|l|l|l|l|}
+%\hline
+%col1 & col2& col3      & col4    \\ \hline
+%a      & 1   & 2& 3  \\ \hline
+%b & 44   & 4 & 7\\ \hline
+%\end{tabular}
+%\end{table}
+
+
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2.2
+
+\end{columns} % End of the split of column 2
+
+\end{column} % End of the second column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The third column
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSION
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Conclusion}
+{\small
+Although our goals were altered throughout our project, we still had a successful end product.  At the end of our project, we were able to:
+\begin{itemize}
+\item Find the most valuable variables, such as income and distance, that determined someone's choice to go to a specific grocery store
+\item Create a model, using these variables, that gives the utility of the location of a certain store
+\item Code the model in AMPL 
+\item Use raw data to put into our code for real world results
+\item Find the utility of specific store in each location
+\item Determine the best location of new grocery store by zip code
+\end{itemize}
+
+}
+\end{block}
+
+%----------------------------------------------------------------------------------------
+%	FUTURE WORK
+%----------------------------------------------------------------------------------------
+
+
+
+\begin{block}{Future Work}
+{\small
+We would like to go back more to our original idea of completely starting the city from scratch and place all new stores in new locations.  Also, we would like to make the locations a bit more specific.  Instead of saying just which zip code the store should be placed in, we would say which corner, street, or block it would be most beneficial at. Even though our model now is a good start, we need to add more to it to make it even more reliable and accurate.  We could either add in more variables that would not have as much weight as the other ones and we could also add in an error value.   
+}
+\end{block}
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\begin{block}{References}
+{\small
+%\nocite{*} % Insert publications even if they are not cited in the poster- avoid
+\bibliographystyle{unsrt}
+\begin{biblist}
+\bib{Figurelli}{article}{
+title={Store Choice in Spatially Differentiated Markets},
+author={Figurelli, Lucrezio}, 
+eprint={https://www2.bc.edu/lucrezio-figurelli/Site/Home_files/jmp_figurelli.pdf},
+date={4 January, 2013}
+}
+\end{biblist}
+}
+\end{block}
+
+\begin{block}{Special Thanks}
+{\small
+Thank you to Rachel Maitra for advising our project.  She has been a great consultant and professor with giving us helpful suggestions and working through our AMPL problems with us.  
+}
+\end{block}
+
+%----------------------------------------------------------------------------------------
+%	CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
+\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+
+\begin{alertblock}{Contact Information}
+
+\begin{itemize}
+\item Email: \href{mailto:Raisonm@wit.edu}{Raisonm@wit.edu}
+\item Email: \href{mailto: Pecukonisj@wit.edu}{Pecukonisj@.edu}
+\end{itemize}
+
+\end{alertblock}
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of the third column
+
+\end{columns} % End of all the columns in the poster
+
+\end{frame} % End of the enclosing frame
+
+\end{document}

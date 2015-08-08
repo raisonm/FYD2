@@ -1,0 +1,28 @@
+\begin{thebibliography}{1}
+
+\bibitem{wiki2}
+wikipedia.org.
+\newblock {\em Mersenne twister}, 2014 (accessed April 2014).
+\newblock \url{http://en.wikipedia.org/wiki/Mersenne_twister}.
+
+\bibitem{python.org}
+Python.org.
+\newblock {\em The Python Standard Library}, 2014 (accessed April 2014).
+\newblock \url{https://docs.python.org/2/library/random.html}.
+
+\bibitem{Frank}
+Steven B~Horton Frank R.~Giordano, William P.~Fox.
+\newblock {\em A First Course in Mathematical Modeling}.
+\newblock Brooks/Cole, Cengage Learning, 5 edition, 2014, 2009, 2003.
+
+\bibitem{Joseph}
+Joseph~A Gallian.
+\newblock {\em Contemporary Abstract Algebra}.
+\newblock Brooks/Cole, Cengage Learning, 8 edition, 2013, 2010, 2006.
+
+\bibitem{T.EHull;A.RDobell:1962}
+T.E Hull;~A.R Dobell.
+\newblock Random number generators.
+\newblock {\em SIAM Review}, 4(3):230--254, July 1962.
+
+\end{thebibliography}

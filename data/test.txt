@@ -1,0 +1,3 @@
+param zip_code := 3
+
+param income := 1 56,663 2 49,853 3 28,462

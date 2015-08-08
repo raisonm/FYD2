@@ -1,0 +1,6 @@
+reset;
+model "./MODELS/model_params_FINAL.mod;
+data ./MODELS/data_file.dat;
+option solver "./cplexamp";
+solve;
+display x;

@@ -1,0 +1,6 @@
+reset;
+model "./MODELS/test.mod";
+data "./MODELS/test.dat";
+option solver "./bonmin-osx/bonmin";
+solve;
+display x;

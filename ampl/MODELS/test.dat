@@ -1,0 +1,5 @@
+param n := 4; # No of Flavors
+param t := 40; # Total labor hour in a week
+param p := 1 1 2 1.5 3 1 4 1.5; # Revenue per package flavor i
+param r := 1 40 2 30 3 50 4 20; # Production rate of package flavor i
+param m := 1 1000 2 900 3 500 4 800; # Maximum demand package flavor i
